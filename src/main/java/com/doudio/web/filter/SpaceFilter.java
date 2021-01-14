@@ -1,6 +1,7 @@
 package com.doudio.web.filter;
 
 import com.doudio.config.properties.SpaceFilterProperties;
+import com.doudio.util.ValUtil;
 import com.doudio.web.filter.wrapper.SpaceHttpServletRequestWrapper;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -44,7 +45,7 @@ public class SpaceFilter extends HttpFilter {
         String path = request.getRequestURI().substring(request.getContextPath().length()).replaceAll("[/]+$", "");
         boolean exclude = true;
 
-        if (excludeUrl != null && !excludeUrl.isEmpty()) {
+        if (ValUtil.isNotEmpty(excludeUrl)) {
             exclude = !excludeUrl.contains(path);
         }
 
