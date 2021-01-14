@@ -12,6 +12,7 @@ public class ValUtil {
 
     /**
      * 判断集合是否为空
+     *
      * @return true 空 | false 非空
      */
     public static boolean isEmpty(Collection coll) {

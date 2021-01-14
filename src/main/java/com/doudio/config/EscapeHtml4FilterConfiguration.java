@@ -1,7 +1,7 @@
 package com.doudio.config;
 
-import com.doudio.config.properties.XssFilterProperties;
-import com.doudio.web.filter.CharacterSetFilter;
+import com.doudio.config.properties.EscapeHtml4FilterProperties;
+import com.doudio.web.filter.EscapeHtml4Filter;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -15,15 +15,15 @@ import org.springframework.context.annotation.Bean;
  **/
 @Data
 @ConditionalOnClass
-@EnableConfigurationProperties(XssFilterProperties.class)
-public class XssFilterConfiguration {
+@EnableConfigurationProperties(EscapeHtml4FilterProperties.class)
+public class EscapeHtml4FilterConfiguration {
 
     @Autowired
-    private XssFilterProperties xssFilterProperties;
+    private EscapeHtml4FilterProperties escapeHtml4FilterProperties;
 
     @Bean
-    public CharacterSetFilter characterSetFilter() {
-        return new CharacterSetFilter().setXssFilterProperties(xssFilterProperties);
+    public EscapeHtml4Filter xssFilter() {
+        return new EscapeHtml4Filter(escapeHtml4FilterProperties);
     }
 
 }

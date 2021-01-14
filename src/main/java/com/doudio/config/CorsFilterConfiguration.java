@@ -1,9 +1,7 @@
 package com.doudio.config;
 
 import com.doudio.config.properties.CorsFilterProperties;
-import com.doudio.config.properties.SpaceFilterProperties;
 import com.doudio.web.filter.CorsFilter;
-import com.doudio.web.filter.SpaceFilter;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -24,7 +22,7 @@ public class CorsFilterConfiguration {
     private CorsFilterProperties corsFilterProperties;
 
     @Bean
-    public CorsFilter spaceFilter() {
+    public CorsFilter corsFilter() {
         return new CorsFilter(corsFilterProperties);
     }
 

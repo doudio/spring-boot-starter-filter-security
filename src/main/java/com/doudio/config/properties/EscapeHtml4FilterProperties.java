@@ -9,6 +9,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @description: 特殊字符过滤配置
  **/
 @Data
-@ConfigurationProperties("doudio.filter.xss")
-public class XssFilterProperties extends FilterProperties {
+@ConfigurationProperties("doudio.filter.escapeHtml4")
+public class EscapeHtml4FilterProperties extends FilterProperties {
 }

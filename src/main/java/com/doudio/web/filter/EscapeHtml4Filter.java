@@ -1,8 +1,8 @@
 package com.doudio.web.filter;
 
-import com.doudio.config.properties.SpaceFilterProperties;
+import com.doudio.config.properties.EscapeHtml4FilterProperties;
 import com.doudio.util.ValUtil;
-import com.doudio.web.filter.wrapper.SpaceHttpServletRequestWrapper;
+import com.doudio.web.filter.wrapper.EscapeHtml4HttpServletRequestWrapper;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.FilterChain;
@@ -17,25 +17,25 @@ import java.util.Set;
 /**
  * @author: doudio
  * @date: 2021-01-14 11:57
- * @description: 空格字符过滤器
+ * @description: 特殊字符过滤器
  **/
 @Slf4j
-public class SpaceFilter extends HttpFilter {
+public class EscapeHtml4Filter extends HttpFilter {
 
-    private SpaceFilterProperties spaceFilterProperties;
+    private EscapeHtml4FilterProperties escapeHtml4FilterProperties;
     private Set<String> excludeUrl;
 
-    public SpaceFilter() {
+    public EscapeHtml4Filter() {
     }
 
-    public SpaceFilter(SpaceFilterProperties spaceFilterProperties) {
-        this.spaceFilterProperties = spaceFilterProperties;
-        this.excludeUrl = spaceFilterProperties.getExcludeUrl();
+    public EscapeHtml4Filter(EscapeHtml4FilterProperties escapeHtml4FilterProperties) {
+        this.escapeHtml4FilterProperties = escapeHtml4FilterProperties;
+        this.excludeUrl = escapeHtml4FilterProperties.getExcludeUrl();
     }
 
     @Override
     public void init(FilterConfig filterConfig) {
-        log.info("Space character filter init");
+        log.info("Special character filter init");
     }
 
     @Override
@@ -48,14 +48,14 @@ public class SpaceFilter extends HttpFilter {
         }
 
         if (exclude) {
-            chain.doFilter(new SpaceHttpServletRequestWrapper(request), response);
+            chain.doFilter(new EscapeHtml4HttpServletRequestWrapper(request), response);
         } else {
             chain.doFilter(request, response);
         }
     }
 
     public void destroy() {
-        log.info("Space character filter destroy");
+        log.info("Special character filter destroy");
     }
 
 }

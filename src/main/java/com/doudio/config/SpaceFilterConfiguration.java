@@ -1,7 +1,6 @@
 package com.doudio.config;
 
 import com.doudio.config.properties.SpaceFilterProperties;
-import com.doudio.config.properties.XssFilterProperties;
 import com.doudio.web.filter.SpaceFilter;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
