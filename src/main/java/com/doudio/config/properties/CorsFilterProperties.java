@@ -9,13 +9,13 @@ import java.util.Map;
 /**
  * @author: doudio
  * @date: 2021-01-14 11:54
- * @description:
+ * @description: 跨域过滤器配置
  **/
 @Data
 @ConfigurationProperties("doudio.filter.cors")
 public class CorsFilterProperties {
 
-    private HashMap<String, String> headerMap;
+    private Map<String, String> headerMap = new HashMap<String, String>();
 
     public CorsFilterProperties() {
         headerMap.put("Access-Control-Allow-Origin", "*");
