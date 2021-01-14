@@ -9,6 +9,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @description:
  **/
 @Data
-@ConfigurationProperties("github.filter.xss")
-public class XssFilterProperties extends FilterProperties {
+@ConfigurationProperties("doudio.filter.xss")
+public class XssFilterProperties {
 }
