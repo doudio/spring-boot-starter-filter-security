@@ -2,7 +2,7 @@ package com.doudio.config.properties;
 
 import lombok.Data;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * @date: 2021-01-14 14:48
@@ -14,6 +14,6 @@ public class FilterProperties {
     /**
      * 排除
      */
-    private List<String> excludeUrl;
+    private Set<String> excludeUrl;
 
 }
