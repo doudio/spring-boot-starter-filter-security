@@ -44,7 +44,7 @@ public class SpaceFilter extends HttpFilter {
         String path = request.getRequestURI().substring(request.getContextPath().length()).replaceAll("[/]+$", "");
         boolean exclude = true;
 
-        if (ObjectUtils.isEmpty(excludeUrl)) {
+        if (excludeUrl != null && !excludeUrl.isEmpty()) {
             exclude = !excludeUrl.contains(path);
         }
 
