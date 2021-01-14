@@ -36,7 +36,7 @@ public class SpaceFilter extends HttpFilter {
 
     @Override
     public void init(FilterConfig filterConfig) {
-        log.info("-------------------- 空格字符过滤器启动 --------------------");
+        log.info("Space character filter init");
     }
 
     @Override
@@ -56,7 +56,7 @@ public class SpaceFilter extends HttpFilter {
     }
 
     public void destroy() {
-        log.info("-------------------- 空格字符过滤器停止 --------------------");
+        log.info("Space character filter destroy");
     }
 
 }

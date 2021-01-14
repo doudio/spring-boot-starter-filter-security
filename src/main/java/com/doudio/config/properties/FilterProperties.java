@@ -11,4 +11,9 @@ import java.util.Set;
 @Data
 public class FilterProperties {
 
+    /**
+     * 排除
+     */
+    private Set<String> excludeUrl;
+
 }

@@ -12,11 +12,6 @@ import java.util.Set;
  **/
 @Data
 @ConfigurationProperties("doudio.filter.space")
-public class SpaceFilterProperties {
-
-    /**
-     * 排除
-     */
-    private Set<String> excludeUrl;
+public class SpaceFilterProperties extends FilterProperties {
 
 }
