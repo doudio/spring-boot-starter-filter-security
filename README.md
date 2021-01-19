@@ -15,7 +15,7 @@ Step 2. Add the dependency (在 pom.xml 添加 filter 依赖)
 <dependency>
   <groupId>com.github.doudio</groupId>
   <artifactId>spring-boot-starter-filter-security</artifactId>
-  <version>1.2.0-SNAPSHOT</version>
+  <version>2.0.0-SNAPSHOT</version>
 </dependency>
 ```
 
