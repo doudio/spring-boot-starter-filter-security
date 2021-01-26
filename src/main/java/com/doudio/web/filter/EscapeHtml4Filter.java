@@ -44,7 +44,7 @@ public class EscapeHtml4Filter extends HttpFilter {
         boolean exclude = true;
 
         if (ValUtil.isNotEmpty(excludeUrl)) {
-            exclude = !excludeUrl.contains(path);
+            exclude = !excludeUrl.equals(path);
         }
 
         if (exclude) {
