@@ -44,6 +44,13 @@ Step 4. Configuration (可用配置)
 
 ```yaml
 # 跨域过滤器 添加 header
+# 跨域默认配置
+#     headerMap.put("Access-Control-Allow-Origin", "*");
+#     headerMap.put("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+#     headerMap.put("Access-Control-Max-Age", "3600");
+#     headerMap.put("Access-Control-Allow-Headers", "Origin, No-Cache, X-Requested-With, Content-Type, X-Forwarded-For, User-Agent, Authorization, serviceid, newUser, isProprietary");
+#     headerMap.put("Access-Control-Expose-Headers", "Authorization, serviceid, newUser, isProprietary");
+#
 #doudio:
 #  filter:
 #    cors:
@@ -63,4 +70,21 @@ Step 4. Configuration (可用配置)
 #    space:
 #      excludeUrl:
 #        - /excludeUrl
+
+# 与swagger有些冲突
+doudio:
+  filter:
+    escape:
+      excludeUrl:
+        - /v2/api-docs
+        - /v2/api-docs-ext
+        - /swagger-resources
+        - /doc.html
+    space:
+      excludeUrl:
+        - /v2/api-docs
+        - /v2/api-docs-ext
+        - /swagger-resources
+        - /doc.html
+
 ```
